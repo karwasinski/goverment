@@ -37,7 +37,7 @@ public class WindowManager extends JFrame {
 			
 			{
 				Pesel pesel = new Pesel (firstLW.getPeselTextField().getText());
-				if(pesel.isValidFlag())	changePanel(firstEW);
+				if(checkIfPeselIsCorect(pesel))	changePanel(firstEW);
 				else System.out.println("Typed pesel is not valid");
 			}
 		});
@@ -59,6 +59,11 @@ public class WindowManager extends JFrame {
 		getContentPane().removeAll();
 		getContentPane().add(newPanel);
 		getContentPane().revalidate();
+	}
+	
+	public boolean checkIfPeselIsCorect (Pesel pesel){
+		if (pesel.isAdultFlag() && pesel.isBornFlag() && pesel.isValidFlag()) return true;
+		else return false;
 	}
 	
 }
