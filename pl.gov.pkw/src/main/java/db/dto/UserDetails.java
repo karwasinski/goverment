@@ -6,18 +6,18 @@ import javax.persistence.Id;
 @Entity
 public class UserDetails {
 	@Id
-	private int userId;
-	private String userName;
-	public int getUserId() {
-		return userId;
+	private int id;
+	private String zip_code;
+	public int getId() {
+		return id;
 	}
-	public void setUserId(int userId) {
-		this.userId = userId;
+	public void setId(int userId) {
+		this.id = userId;
 	}
-	public String getUserName() {
-		return userName;
+	public String getZip_code() {
+		return zip_code;
 	}
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setZip_code(String userName) {
+		this.zip_code = userName;
 	}
 }

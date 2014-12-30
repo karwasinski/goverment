@@ -10,23 +10,18 @@ import db.dto.UserDetails;
 public class  HibernateTest {
 	public static void main(String[] args) {
 	UserDetails user = new UserDetails();
-	user.setUserId(1);
-	user.setUserName("Jan Nowak");
+	user.setId(1);
+	user.setZip_code("50-447");
 	
-	Configuration configuration = new Configuration();
-	configuration.configure("hibernate.cfg.xml");
-	System.out.println("Hibernate Configuration loaded");
 	
-	ServiceRegistry sr = new ServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
-	System.out.println("Hibernate serviceRegistry created");
 	
-	SessionFactory sessionFactory = configuration.buildSessionFactory(sr);
+	SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 	Session session = sessionFactory.getCurrentSession();//openSession();
-	session = sessionFactory.openSession();
+
 	session.beginTransaction();
-	session.save(user);
+	//session.save(user);
 	session.getTransaction().commit();
-	session.close();
+	sessionFactory.close();
 	
 	}
 	
