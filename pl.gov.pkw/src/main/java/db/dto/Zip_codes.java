@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class UserDetails {
+public class Zip_codes {
 	@Id
 	private int id;
 	private String zip_code;

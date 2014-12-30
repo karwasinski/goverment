@@ -16,13 +16,13 @@
          <!-- SQL dialect -->  
          <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>  
    
-         <!-- Echo all executed SQL to stdout -->  
-         <property name="hibernate.show_sql">true</property>  
+         <!-- Echo all executed SQL to stdout   
+         <property name="hibernate.show_sql">true</property>  -->
    
          <!-- Drop and re-create the database schema on startup -->  
-         <property name="hibernate.hbm2ddl.auto">create</property>  
+         <property name="hibernate.hbm2ddl.auto">update</property>  
    
-         <mapping class="db.dto.UserDetails"></mapping>  
+         <mapping class="db.dto.Zip_codes"></mapping>  
    
      </session-factory>  
    
