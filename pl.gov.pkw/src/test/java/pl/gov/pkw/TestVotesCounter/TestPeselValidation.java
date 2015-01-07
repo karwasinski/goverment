@@ -6,6 +6,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import org.fest.assertions.Assertions;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -26,7 +27,8 @@ public class TestPeselValidation {
 	@Test
 	public void lastDigitShouldEquelCountedValidDigit() {
 		Pesel pesel = new Pesel ("91091504432");
-		assertEquals(2, pesel.countValidDigit());
+		//assertEquals(2, pesel.countValidDigit());
+		Assertions.assertThat(pesel.countValidDigit()).isEqualTo(2);
 	}
 	
 	@Test
@@ -38,7 +40,8 @@ public class TestPeselValidation {
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
-		assertEquals(date, pesel.getBirthDate());
+		//assertEquals(date, pesel.getBirthDate());
+		Assertions.assertThat(pesel.getBirthDate()).isEqualTo(date);
 	}
 	
 	@Test
@@ -50,7 +53,8 @@ public class TestPeselValidation {
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
-		assertEquals(date, pesel.getBirthDate());
+		//assertEquals(date, pesel.getBirthDate());
+		Assertions.assertThat(pesel.getBirthDate()).isEqualTo(date);
 	}
 	
 	@Test
@@ -62,25 +66,29 @@ public class TestPeselValidation {
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
-		assertEquals(date, pesel.getBirthDate());
+		//assertEquals(date, pesel.getBirthDate());
+		Assertions.assertThat(pesel.getBirthDate()).isEqualTo(date);
 	}
 	
 	@Test
 	public void checkIfUserIsBorn() {
 		Pesel pesel = new Pesel ("91091504432");
-		assertEquals(true, pesel.isBornFlag());
+		//assertEquals(true, pesel.isBornFlag());
+		Assertions.assertThat(pesel.isBornFlag()).isEqualTo(true);
 	}
 	
 	@Test
 	public void checkIfUserIsAdult() {
 		Pesel pesel = new Pesel ("91891504432");
-		assertEquals(true, pesel.isAdultFlag());
+		//assertEquals(true, pesel.isAdultFlag());
+		Assertions.assertThat(pesel.isAdultFlag()).isEqualTo(true);
 	}
 	
 	@Test
 	public void checkSexOfUser() {
 		Pesel pesel = new Pesel ("91891504432");
-		assertEquals(Sex.men, pesel.getSex());
+		//assertEquals(Sex.men, pesel.getSex());
+		Assertions.assertThat(pesel.getSex()).isEqualTo(Sex.men);
 	}
 
 }
